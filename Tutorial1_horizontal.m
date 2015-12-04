@@ -15,7 +15,7 @@ str(1).thr=0;
 %% Load all the .nii files
 for emoi=1:5
     
-    nii(emoi)=load_nii(['./example_niftis/outgr' num2str(emoi) '_hires.nii']);
+    nii(emoi)=load_nii(['./example_niftis/cat' num2str(emoi) '_hires.nii']);
 end
 
 %% Define a set of colours for the images

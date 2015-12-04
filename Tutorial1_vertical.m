@@ -1,8 +1,8 @@
 
 addpath(genpath('functions')) % Add the paths to use the NIFTI tools and VIZNII scripts
 
-mask=load_nii('./nifti_templates_masks/whitened_05mm.nii'); % Load the background image
-base=load_nii('./nifti_templates_masks/mni152bet.nii'); % Load the image to use as reference for the MNI coords
+mask=load_nii('./templates_masks/whitened_0.5mm.nii'); % Load the background image
+base=load_nii('./templates_masks/mni152bet.nii'); % Load the image to use as reference for the MNI coords
 
 
 %% This a struct for the images. The first one is the background
@@ -15,7 +15,7 @@ str(1).thr=0;
 %% Load all the .nii files
 for emoi=1:5
     
-    nii(emoi)=load_nii(['./example_niftis/outgr' num2str(emoi) '_hires.nii']);
+    nii(emoi)=load_nii(['./example_niftis/cat' num2str(emoi) '_hires.nii']);
 end
 
 %% Define a set of colours for the image
