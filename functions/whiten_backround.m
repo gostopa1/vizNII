@@ -8,7 +8,7 @@
 
 addpath('nifti'); % Make sure that the nifti path is added. It is necessary in order to load files
 
-base=load_nii('../mni152bet.nii'); % Load some NIFTI file. This one for example
+base=load_nii('../nifti_templates_masks/mni152bet.nii'); % Load some NIFTI file. This one for example
 
 %%base=load_nii('MNI152lin_T1_1mm.nii'); % Another example if needed
 
@@ -28,9 +28,18 @@ temp2=smooth3(b,'gaussian',5,1);
 
 
 % If you wish to visualize the result before saving uncomment the next two line
- view_nii(make_nii((1-temp2).*niiimg+temp2));
-niiout=make_nii((1-temp2).*niiimg+temp2);
-%niiout.hdr.dime.bitpix=16;
-niiout.hdr=base.hdr
-%base.hdr.dime.bitpix=16;
+ %view_nii(make_nii((1-temp2).*niiimg+temp2));
+nobits=4;
+temp3=(1-temp2).*niiimg+temp2;
+%temp3=temp3*(2^nobits);
+%%
+nobits=512;
+%temp3=base.img;
+
+temp3=(1-temp2).*niiimg+temp2;
+temp3=temp3*(2^8);
+niiout=make_nii(temp3);
+niiout.hdr.dime.datatype=nobits;
+niiout.hdr.dime.bitpix=nobits;
+
 save_nii(niiout,'whitened_0.5mm.nii')

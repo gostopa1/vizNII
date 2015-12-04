@@ -1,8 +1,8 @@
 
 addpath(genpath('functions')) % Add the paths to use the NIFTI tools and VIZNII scripts
 
-mask=load_nii('./nifti_templates_masks/whitened_05mm.nii'); % Load the background image
-base=load_nii('./nifti_templates_masks/mni152bet.nii'); % Load the image to use as reference for the MNI coords
+mask=load_nii('./templates_masks/whitened_0.5mm.nii'); % Load the background image
+base=load_nii('./templates_masks/mni152bet.nii'); % Load the image to use as reference for the MNI coords
 
 
 %% This a struct for the images. The first one is the background
@@ -42,7 +42,7 @@ verpad=0.1
 ind=0
 figure(2)
 clf
-scale=0.9; % Scaling parameter. Low scale speeds up the process but worsens the resolution
+scale=0.95; % Scaling parameter. Low scale speeds up the process but worsens the resolution
 
 
 x1=140;
@@ -64,7 +64,7 @@ subplot('Position',[ind*picsize 0+verpad picsize picsize ])
 viznii(str,'x',x1,0,0,scale);
 
 
-print(['test2'],'-r100','-dpng')
+print(['test1'],'-r100','-dpng')
 
 
 %%
