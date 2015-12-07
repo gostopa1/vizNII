@@ -136,7 +136,7 @@ if showlabel==1
     if showMNI==1
         %nii=load_nii('MNI152_T1_2mm.nii');
         %nii=load_nii('MNI152_T1_2mm.nii');
-        nii=load_nii('mni152bet.nii');
+        nii=load_nii('./templates_masks/mni152bet.nii');
         sliceno
         MNIco=coords2MNI([sliceno sliceno sliceno],nii)
         matcos=MNI2coords([sliceno sliceno sliceno],nii)
