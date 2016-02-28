@@ -1,0 +1,4 @@
+Matrix Coordinates
+149   91  121
+MNI coordinates
+-2 -66 -12
