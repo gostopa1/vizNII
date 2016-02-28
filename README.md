@@ -15,10 +15,11 @@ The toolbox uses (and includes) the NIFTI toolbox made by Jimmy Shen which has s
 No other files are needed in order to run the visualization tool but I need to cite Jimmy's work:
 http://www.mathworks.com/matlabcentral/fileexchange/8797-tools-for-nifti-and-analyze-image
 
-The main visualization functions are the 
+The main visualization functions are the:
+viznii_image(
 
-viznii_image
 viznii
+
 viznii_levels
 
 
