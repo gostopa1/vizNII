@@ -6,10 +6,10 @@ Here is an example
 
 I've made a couple of tutorials that should run rightaway just to show its possibilities.
 
-Tutorial 1 horizontal:  reads a couple of niftis (from example_niftis/ folder) and  generates images (one of each plane, i.e. one saggital, coronal and axial) and stacks them horizontally  
-Tutorial 1 vertical:  same as the previous but in vertical fashion  
-Tutorial 2:  reads a couple of niftis but generates only axial slices amd then shows the slice level in a saggital view  
-Tutorial 3: Instead of generating ready plots it creates an image array to be manipulated or stored later. It works faster and better while the exported image is smaller in size but good quality (its results are saved in results folder!)  
+Tutorial 1 horizontal:  reads a couple of niftis (from example_niftis/ folder) and  generates images (one of each plane, i.e. one saggital, coronal and axial) and stacks them horizontally  <br />
+Tutorial 1 vertical:  same as the previous but in vertical fashion   <br />
+Tutorial 2:  reads a couple of niftis but generates only axial slices amd then shows the slice level in a saggital view   <br />
+Tutorial 3: Instead of generating ready plots it creates an image array to be manipulated or stored later. It works faster and better while the exported image is smaller in size but good quality (its results are saved in results folder!)  <br />
 
 The toolbox uses (and includes) the NIFTI toolbox made by Jimmy Shen which has saved my life. 
 No other files are needed in order to run the visualization tool but I need to cite Jimmy's work:
