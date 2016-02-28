@@ -25,13 +25,10 @@ viznii_levels
 
 Some other functions included:
 
-slices_of_max_info: it finds the coordinates of the slices with the maximum information 
-
-overlap_niis: finds the overlapping regions of two images given a threshold 
-
-mni2coords: transforms MNI coordiantes to matrix coordinates given a reference NIFTI file 
-
-coords2mni: it does the opposite 
+slices_of_max_info: it finds the coordinates of the slices with the maximum information  <br />
+overlap_niis: finds the overlapping regions of two images given a threshold <br />
+mni2coords: transforms MNI coordiantes to matrix coordinates given a reference NIFTI file <br />
+coords2mni: it does the opposite <br />
 
 There might be files in the toolbox that are not used. And I am aware that the documentation and the code are not very detailed but I made this for my needs and then I thought I should share it. But you are very welcome to make comments, requests, questions or whatever. I will be glad to help.
 
