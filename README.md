@@ -10,6 +10,7 @@ Tutorial 1 horizontal:  reads a couple of niftis (from example_niftis/ folder) a
 Tutorial 1 vertical:  same as the previous but in vertical fashion   <br />
 Tutorial 2:  reads a couple of niftis but generates only axial slices amd then shows the slice level in a saggital view   <br />
 Tutorial 3: Instead of generating ready plots it creates an image array to be manipulated or stored later. It works faster and better while the exported image is smaller in size but good quality (its results are saved in results folder!)  <br />
+Tutorial 4: Same as tutorial 3 but with color gradients <br />
 
 The toolbox uses (and includes) the NIFTI toolbox made by Jimmy Shen which has saved my life. 
 No other files are needed in order to run the visualization tool but I need to cite Jimmy's work:
@@ -21,6 +22,8 @@ viznii_image
 viznii 
 
 viznii_levels 
+
+viznii_image_colorbar
 
 
 Some other functions included:
