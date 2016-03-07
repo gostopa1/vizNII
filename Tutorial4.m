@@ -8,7 +8,7 @@ base=load_nii('./templates_masks/mni152bet.nii'); % Load the image to use as ref
 
 str(1).img=double(mask.img); % str.img is the NIFTI image
 str(1).trans=1.3; % This is the transparency of the image. It basically takes values from 0-1 but values larger than 1 make it brighter
-str(1).col=[1 1 1]; % This is the coloud
+str(1).col=[1 1 1]; % This is the colour
 str(1).thr=0;
 
 %% Load all the .nii files
@@ -17,7 +17,7 @@ thr=10;
 %% Load the two first niftis and find their ovelap
 nii(1)=load_nii(['./example_niftis/cat' num2str(1) '_hires.nii']);
 nii(2)=load_nii(['./example_niftis/cat' num2str(2) '_hires.nii']);
-nii(3).img=(overlap_niis(nii(1),nii(2),thr)*thr)+1
+
 
 
 %% Define a set of colours for the images
@@ -50,9 +50,9 @@ x1=(floor([x1]/2)*2+1);
 y1=(floor([y1]/2)*2+1);
 z1=(floor([z1]/2)*2+1);
 
-imx=viznii_image_colorbar(str,'z',z1,0,0,scale);
-imy=viznii_image_colorbar(str,'y',y1,0,0,scale);
-imz=viznii_image_colorbar(str,'x',x1,0,0,scale);
+imx=viznii_image(str,'z',z1,0,0,scale);
+imy=viznii_image(str,'y',y1,0,0,scale);
+imz=viznii_image(str,'x',x1,0,0,scale);
 
 simg=size(imx);
 llim=0.1;rlim=.9; % To trim a bit between the image to reduce the white space
@@ -66,7 +66,7 @@ allimgs=[imx(xinds,yinds,:) imy(xinds,yinds,:) imz(xinds,:,:)];
 %%
 prefix='results/';
 mkdir(prefix)
-filename=[prefix 'Tutorial3_result' num2str(thr) ]
+filename=[prefix 'Tutorial4_result' num2str(thr) ]
 
 imwrite(allimgs,[filename '.png'])
 
