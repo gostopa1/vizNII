@@ -12,7 +12,7 @@ str(1).col=[1 1 1]; % This is the colour
 str(1).thr=0;
 
 %% Load all the .nii files
-thr=10;
+thr=8;
 
 %% Load the two first niftis and find their ovelap
 nii(1)=load_nii(['./example_niftis/cat' num2str(1) '_hires.nii']);
@@ -21,7 +21,11 @@ nii(2)=load_nii(['./example_niftis/cat' num2str(2) '_hires.nii']);
 
 
 %% Define a set of colours for the images
-col=[1 0 0 ; 0 0 1 ; 1 0.8 0];
+%Starting color
+col1=[1 0 0 ; 0 0 1 ; 1 0.8 0];
+
+%Final color
+col2=[0.8 0.8 0; 1 1 1 ; 1 0.8 0];
 
 %% Make the rest of the struct for the image
 
@@ -32,8 +36,8 @@ for i=1:length(nii)
     str(i+1).trans=1; % set the transparency
     str(i+1).col=col(i,:); % set the colour
     
-    str(i+1).col2=[1 1 1]; % set the colour
-    str(i+1).thr=[thr 40]; % set min max threshold
+    str(i+1).col2=col2(i,:); % set the colour
+    str(i+1).thr=[thr 60]; % set min max threshold
     
     clrbr=make_colorbar(str(i+1).col,str(i+1).col2);
     imwrite(clrbr,['Colorbar_' num2str(i+1) '_thr'  num2str(str(i+1).thr) '.png'])
@@ -72,12 +76,12 @@ imwrite(allimgs,[filename '.png'])
 
 fileID = fopen([filename '.txt'],'w');
 
-matcords=num2str([x1 y1 z1])
+matcords=num2str([x1 y1 z1]);
 fprintf(fileID,'%s\n','Matrix Coordinates');
 fprintf(fileID,'%s\n',matcords);
 
 fprintf(fileID,'%s\n','MNI coordinates');
-mnicords=num2str(coords2MNI([x1 y1 z1],base))
+mnicords=num2str(coords2MNI([x1 y1 z1],base));
 fprintf(fileID,'%s\n',mnicords);
 
 fclose(fileID);
