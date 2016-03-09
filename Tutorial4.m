@@ -34,7 +34,7 @@ for i=1:length(nii)
     str(i+1).img=nii(i).img;
     
     str(i+1).trans=1; % set the transparency
-    str(i+1).col=col(i,:); % set the colour
+    str(i+1).col=col1(i,:); % set the colour
     
     str(i+1).col2=col2(i,:); % set the colour
     str(i+1).thr=[thr 60]; % set min max threshold
